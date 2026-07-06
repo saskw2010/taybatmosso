@@ -1,0 +1,371 @@
+/* ═══════════════════════════════════════════════
+   TAYEBAT CLONE — THEME SYSTEM & TRANSITIONS
+   Theme Panel · Mode Toggle · Smooth Transitions
+   ═══════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   1.  THEME TRANSITION CLASS
+   ═══════════════════════════════════ */
+body.theme-transitioning,
+body.theme-transitioning *,
+body.theme-transitioning *::before,
+body.theme-transitioning *::after {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    fill 0.35s ease !important;
+}
+
+/* ═══════════════════════════════════
+   2.  THEME PANEL (Slide-in / Dropdown)
+   ═══════════════════════════════════ */
+.theme-panel {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 300px;
+  height: 100vh;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  z-index: calc(var(--z-modal) + 1);
+  padding: 30px 20px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  transition: left var(--transition-normal);
+}
+
+.theme-panel.open {
+  left: 0;
+}
+
+.theme-panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--transition-normal),
+    visibility var(--transition-normal);
+}
+
+.theme-panel-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.theme-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.theme-panel-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.theme-panel-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.theme-panel-close:hover {
+  background: var(--hover-overlay);
+  color: var(--text-primary);
+}
+
+/* ── Section Labels in Panel ── */
+.theme-panel-section {
+  margin-bottom: 24px;
+}
+
+.theme-panel-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+/* ═══════════════════════════════════
+   3.  THEME OPTIONS (Color Cards)
+   ═══════════════════════════════════ */
+.theme-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--card-border);
+  background: var(--card-bg);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.theme-option:hover {
+  border-color: var(--border-color-strong);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.theme-option.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+.theme-option-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* gradient swatch showing the theme's primary colors */
+.theme-option-swatch[data-swatch="emerald-teal"] {
+  background: linear-gradient(135deg, #0f766e 50%, #d4a843 50%);
+}
+
+.theme-option-swatch[data-swatch="ocean-emerald"] {
+  background: linear-gradient(135deg, #0891b2 50%, #f59e0b 50%);
+}
+
+.theme-option-swatch[data-swatch="royal-emerald"] {
+  background: linear-gradient(135deg, #2563eb 50%, #eab308 50%);
+}
+
+/* Active check overlay */
+.theme-option.active .theme-option-swatch::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: inherit;
+}
+
+.theme-option-info {
+  flex: 1;
+}
+
+.theme-option-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 2px;
+}
+
+.theme-option-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════
+   4.  MODE TOGGLE (Light/Dark Switch)
+   ═══════════════════════════════════ */
+.mode-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--card-border);
+}
+
+.mode-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--text-heading);
+  font-size: 14px;
+}
+
+.mode-toggle-icon {
+  font-size: 20px;
+}
+
+.mode-toggle {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.mode-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.mode-toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--border-color-strong);
+  border-radius: 14px;
+  transition: background var(--transition-normal);
+}
+
+.mode-toggle input:checked + .mode-toggle-track {
+  background: var(--primary);
+}
+
+.mode-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-normal);
+}
+
+.mode-toggle input:checked ~ .mode-toggle-thumb {
+  transform: translateX(-24px);
+}
+
+/* ═══════════════════════════════════
+   5.  DARK MODE — Glass Overrides
+   ═══════════════════════════════════ */
+[data-mode="dark"] .hero-label {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-mode="dark"] .hero-ai-cta {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-mode="dark"] .hero-pdf-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-mode="dark"] .nav-dropdown-menu {
+  background: var(--bg-surface);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-mode="dark"] .nav-dropdown-menu::before {
+  background: var(--bg-surface);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ═══════════════════════════════════
+   6.  DARK MODE — Component Tweaks
+   ═══════════════════════════════════ */
+[data-mode="dark"] .bottom-nav {
+  background: var(--bg-surface);
+  border-top-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-mode="dark"] .community-banner {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-mode="dark"] .theme-panel {
+  border-right-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-mode="dark"] .chat-fab {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 0 rgba(15, 118, 110, 0.3);
+}
+
+/* Ensure inputs look good in dark mode */
+[data-mode="dark"] input,
+[data-mode="dark"] textarea,
+[data-mode="dark"] select {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+[data-mode="dark"] input:focus,
+[data-mode="dark"] textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+/* ═══════════════════════════════════
+   7.  FONT SIZE CONTROL (A+ / A-)
+   ═══════════════════════════════════ */
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.font-size-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.font-size-btn:hover {
+  background: var(--hover-overlay);
+  color: var(--primary);
+}
+
+.font-size-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  min-width: 30px;
+  text-align: center;
+}

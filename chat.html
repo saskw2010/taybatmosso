@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المساعد الذكي بنظام الطيبات | محادثة مباشرة</title>
+  
+  <!-- ===== Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/themes.css">
+  
+  <style>
+    /* ── Chat Container Style ── */
+    .chat-layout {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 180px);
+      min-height: 500px;
+    }
+
+    .chat-box {
+      flex: 1;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── API Key Overlay Config ── */
+    .api-config-bar {
+      background: var(--bg-surface-alt);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .api-config-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .api-input-wrap {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .api-input {
+      flex: 1;
+      background: var(--bg-body);
+      border: 1px solid var(--border-color-strong);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 12px;
+      color: var(--text-primary);
+      outline: none;
+    }
+
+    .api-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 6px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .api-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    /* ── Chat Messages Screen ── */
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .message {
+      display: flex;
+      gap: 12px;
+      max-width: 80%;
+      animation: messageAppear 0.3s ease;
+    }
+
+    @keyframes messageAppear {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .message.assistant {
+      align-self: flex-start;
+    }
+
+    .msg-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .user .msg-avatar {
+      background: var(--accent);
+      color: var(--primary-darkest);
+    }
+
+    .assistant .msg-avatar {
+      background: var(--primary);
+      color: white;
+    }
+
+    .msg-bubble {
+      background: var(--bg-surface-alt);
+      border: 1px solid var(--border-color);
+      padding: 14px 18px;
+      border-radius: var(--radius-lg);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-primary);
+    }
+
+    .user .msg-bubble {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-top-left-radius: 0;
+    }
+
+    .assistant .msg-bubble {
+      border-top-right-radius: 0;
+    }
+
+    .msg-bubble img {
+      max-width: 100%;
+      border-radius: var(--radius-sm);
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* ── Welcome Screen ── */
+    .chat-welcome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      margin: auto;
+      max-width: 500px;
+    }
+
+    .chat-welcome-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .chat-welcome-title {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+    }
+
+    .chat-welcome-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .chat-suggestions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      width: 100%;
+    }
+
+    .suggestion-btn {
+      background: var(--bg-surface-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: var(--transition-normal);
+      text-align: right;
+    }
+
+    .suggestion-btn:hover {
+      background: var(--hover-overlay);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ── Input Area ── */
+    .chat-input-area {
+      padding: 16px 24px;
+      background: var(--bg-surface-alt);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .input-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chat-textbox {
+      flex: 1;
+      background: var(--bg-body);
+      border: 1.5px solid var(--border-color-strong);
+      border-radius: var(--radius-full);
+      padding: 12px 24px;
+      font-size: 14px;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .chat-textbox:focus {
+      border-color: var(--primary);
+    }
+
+    .chat-action-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: var(--transition-normal);
+      flex-shrink: 0;
+    }
+
+    .btn-send {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-send:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    .btn-upload {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border-color-strong);
+      color: var(--text-secondary);
+    }
+
+    .btn-upload:hover {
+      background: var(--hover-overlay);
+      color: var(--primary);
+    }
+
+    /* ── Image Preview Box ── */
+    .image-preview-box {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-body);
+      border: 1px solid var(--border-color);
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      align-self: flex-start;
+    }
+
+    .preview-thumb {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-remove-preview {
+      background: transparent;
+      border: none;
+      color: var(--danger);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* ── Typing Indicator ── */
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 8px 12px;
+      background: var(--bg-body);
+      border-radius: var(--radius-md);
+      width: fit-content;
+      align-self: flex-start;
+      margin-right: 52px;
+      display: none;
+    }
+
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--text-muted);
+      border-radius: 50%;
+      animation: typing 1s infinite alternate;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typing {
+      from { transform: translateY(0); opacity: 0.3; }
+      to { transform: translateY(-5px); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="chat-page">
+
+<!-- ♿ Skip Link -->
+<a href="#chatContent" class="skip-link">تخطّي للمحتوى الرئيسي</a>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-top">
+    🌿 غذاؤك دواؤك ... ودواؤك في غذائك — التوازن سر الصحة والاعتدال سر الحياة 🌿
+  </div>
+  <div class="header-main">
+    <a href="/" class="logo-area">
+      <div class="logo-emblem">
+        <div class="logo-emblem-inner">🌿</div>
+      </div>
+      <div class="logo-text-area">
+        <div class="logo-title">نظام الطيبات</div>
+        <div class="logo-subtitle">الدكتور ضياء العوضي</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">🏠 الرئيسية</a>
+      <a href="allowed.html" class="nav-link">✅ المسموحات</a>
+      <a href="forbidden.html" class="nav-link">❌ الممنوعات</a>
+      <a href="chat.html" class="nav-link active">🤖 المساعد الذكي</a>
+    </nav>
+
+    <!-- Desktop Theme Controls -->
+    <div class="theme-controls" id="themeControls">
+      <div class="theme-color-btns">
+        <button class="theme-color-btn active" data-theme-btn="emerald-teal" title="إميرالد تيل" aria-label="ثيم إميرالد تيل">
+          <span class="theme-color-dot" style="background: #0f766e;"></span>
+        </button>
+        <button class="theme-color-btn" data-theme-btn="ocean-emerald" title="أوشن إميرالد" aria-label="ثيم أوشن إميرالد">
+          <span class="theme-color-dot" style="background: #0891b2;"></span>
+        </button>
+        <button class="theme-color-btn" data-theme-btn="royal-emerald" title="رويال إميرالد" aria-label="ثيم رويال إميرالد">
+          <span class="theme-color-dot" style="background: #2563eb;"></span>
+        </button>
+      </div>
+      <button class="mode-toggle-btn" id="modeToggleDesktop" title="تبديل الوضع" aria-label="تبديل وضع الإضاءة">
+        🌙
+      </button>
+    </div>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">☰</button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     CHAT INTERFACE
+     ═══════════════════════════════════════════ -->
+<main class="chat-layout" id="chatContent">
+  <div class="chat-box">
+    
+    <!-- API key configuration -->
+    <div class="api-config-bar">
+      <div class="api-config-title">🔑 مفتاح Gemini API:</div>
+      <div class="api-input-wrap">
+        <input type="password" id="apiKeyInput" class="api-input" placeholder="أدخل مفتاح API الخاص بك لتفعيل الذكاء الاصطناعي...">
+        <button id="saveKeyBtn" class="api-btn">حفظ</button>
+      </div>
+    </div>
+
+    <!-- Messages screen -->
+    <div class="chat-messages" id="chatMessages">
+      
+      <!-- Welcome screen when chat is empty -->
+      <div class="chat-welcome" id="chatWelcome">
+        <div class="chat-welcome-icon">🤖</div>
+        <h2 class="chat-welcome-title">مرحباً بك في المساعد الذكي</h2>
+        <p class="chat-welcome-desc">أنا مساعدك الذكي لنظام الطيبات، يمكنني الإجابة عن كل استفساراتك حول المسموحات والممنوعات وكيفية تطبيق أساسيات النظام أو فحص وجبتك بالصورة.</p>
+        <div class="chat-suggestions">
+          <button class="suggestion-btn" data-query="ما هي القواعد الخمس الأساسية لنظام الطيبات؟">ما هي القواعد الخمس الأساسية؟</button>
+          <button class="suggestion-btn" data-query="هل الأرز الأبيض مسموح في نظام الطيبات؟">هل الأرز الأبيض مسموح؟</button>
+          <button class="suggestion-btn" data-query="كيف أبدأ بتطبيق نظام الطيبات للقولون؟">كيف أبدأ لعلاج القولون؟</button>
+          <button class="suggestion-btn" data-query="ما هي بدائل الممنوعات المتاحة؟">ما هي بدائل الممنوعات؟</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Image preview box -->
+    <div class="image-preview-box" id="imagePreviewBox">
+      <img src="" alt="معاينة الصورة" class="preview-thumb" id="previewThumb">
+      <span style="font-size: 12px; color: var(--text-muted);" id="previewFilename">image.png</span>
+      <button class="btn-remove-preview" id="btnRemovePreview">✕</button>
+    </div>
+
+    <!-- Typing indicator -->
+    <div class="typing-indicator" id="typingIndicator">
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+    </div>
+
+    <!-- Chat input area -->
+    <div class="chat-input-area">
+      <form id="chatForm" onsubmit="event.preventDefault();">
+        <div class="input-row">
+          <input type="file" id="fileInput" accept="image/*" style="display: none;">
+          <button type="button" class="chat-action-btn btn-upload" id="uploadBtn" title="ارفع صورة الطعام">📷</button>
+          <input type="text" id="chatInput" class="chat-textbox" placeholder="اكتب سؤالك هنا عن نظام الطيبات أو ارفع صورة وجبتك..." autocomplete="off">
+          <button type="submit" class="chat-action-btn btn-send" id="sendBtn" title="إرسال">←</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<!-- Scripts -->
+<script src="js/themes.js"></script>
+<script>
+  // Simple check and trigger on DOM ready
+  document.addEventListener('DOMContentLoaded', () => {
+    ThemeManager.init();
+  });
+</script>
+<script src="js/chat.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الممنوعات وبدائلها في نظام الطيبات | الدليل الكامل</title>
+  
+  <!-- ===== Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .subpage-container {
+      max-width: var(--max-width);
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .category-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .category-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      color: var(--text-heading);
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ef4444;
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .item-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .item-card {
+      background: var(--bg-body);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .item-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      border-color: #ef4444;
+    }
+
+    .item-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .item-icon {
+      font-size: 28px;
+    }
+
+    .item-name {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .alternative-box {
+      margin-top: 12px;
+      background: var(--bg-surface);
+      border: 1.5px dashed var(--primary);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+    }
+
+    .alternative-title {
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .alternative-text {
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ♿ Skip Link -->
+<a href="#forbiddenContent" class="skip-link">تخطّي للمحتوى الرئيسي</a>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-top">
+    🌿 غذاؤك دواؤك ... ودواؤك في غذائك — التوازن سر الصحة والاعتدال سر الحياة 🌿
+  </div>
+  <div class="header-main">
+    <a href="/" class="logo-area">
+      <div class="logo-emblem">
+        <div class="logo-emblem-inner">🌿</div>
+      </div>
+      <div class="logo-text-area">
+        <div class="logo-title">نظام الطيبات</div>
+        <div class="logo-subtitle">الدكتور ضياء العوضي</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">🏠 الرئيسية</a>
+      <a href="allowed.html" class="nav-link">✅ المسموحات</a>
+      <a href="forbidden.html" class="nav-link active">❌ الممنوعات</a>
+      <a href="chat.html" class="nav-link">🤖 المساعد الذكي</a>
+    </nav>
+
+    <!-- Desktop Theme Controls -->
+    <div class="theme-controls" id="themeControls">
+      <div class="theme-color-btns">
+        <button class="theme-color-btn active" data-theme-btn="emerald-teal" title="إميرالد تيل" aria-label="ثيم إميرالد تيل">
+          <span class="theme-color-dot" style="background: #0f766e;"></span>
+        </button>
+        <button class="theme-color-btn" data-theme-btn="ocean-emerald" title="أوشن إميرالد" aria-label="ثيم أوشن إميرالد">
+          <span class="theme-color-dot" style="background: #0891b2;"></span>
+        </button>
+        <button class="theme-color-btn" data-theme-btn="royal-emerald" title="رويال إميرالد" aria-label="ثيم رويال إميرالد">
+          <span class="theme-color-dot" style="background: #2563eb;"></span>
+        </button>
+      </div>
+      <button class="mode-toggle-btn" id="modeToggleDesktop" title="تبديل الوضع" aria-label="تبديل وضع الإضاءة">
+        🌙
+      </button>
+    </div>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">☰</button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     FORBIDDEN CONTENT
+     ═══════════════════════════════════════════ -->
+<main class="subpage-container" id="forbiddenContent">
+  <div class="section-header-center">
+    <p class="section-label" style="color: #ef4444;">✦ الممنوعات وبدائلها الصحية ✦</p>
+    <h2>قائمة الأطعمة الممنوعة في نظام الطيبات</h2>
+    <p class="section-desc">تجنب هذه الأطعمة كلياً لضمان تعافي الجهاز الهضمي والقلوي للمريض، واستعن بالبدائل الطبيعية المقترحة للدكتور ضياء العوضي رحمه الله.</p>
+  </div>
+
+  <!-- 1. الجلوتين والقمح -->
+  <section class="category-section">
+    <h3 class="category-title" style="border-bottom-color: #ef4444;"><span>🌾</span> القمح والجلوتين ومصنعاتها</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div class="item-header">
+          <span class="item-icon">🍞</span>
+          <span class="item-name">الخبز والمعجنات</span>
+        </div>
+        <div class="alternative-box">
+          <div class="alternative-title">🔄 البديل المسموح:</div>
+          <div class="alternative-text">رقاق الأرز أو خبز الشوفان المصفى جيداً من القشور.</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-header">
+          <span class="item-icon">🍝</span>
+          <span class="item-name">المكرونة والنودلز</span>
+        </div>
+        <div class="alternative-box">
+          <div class="alternative-title">🔄 البديل المسموح:</div>
+          <div class="alternative-text">الأرز الأبيض المطهو جيداً بالسمن أو مكرونة الأرز الخالية من الجلوتين.</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-header">
+          <span class="item-icon">🍪</span>
+          <span class="item-name">البسكويت والحلويات المصنعة</span>
+        </div>
+        <div class="alternative-box">
+          <div class="alternative-title">🔄 البديل المسموح:</div>
+          <div class="alternative-text">البسكويت المصنوع من دقيق الأرز أو جوز الهند في البيت.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. الألبان السائلة والزيوت المهدرجة والدواجن المصنعة -->
+  <section class="category-section">
+    <h3 class="category-title" style="border-bottom-color: #ef4444;"><span>🥛</span> الحليب والزيوت الصناعية والدجاج</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div class="item-header">
+          <span class="item-icon">🐔</span>
+          <span class="item-name">الدجاج الأبيض ودجاج المزارع</span>
+        </div>
+        <div class="alternative-box">
+          <div class="alternative-title">🔄 البديل المسموح:</div>
+          <div class="alternative-text">الطيور البلدية الحرة (الحمام البلدي، البط البلدي، الأوز) أو الأسماك واللحوم الحمراء.</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-header">
+          <span class="item-icon">🥛</span>
+          <span class="item-name">الحليب البقري السائل</span>
+        </div>
+        <div class="alternative-box">
+          <div class="alternative-title">🔄 البديل المسموح:</div>
+          <div class="alternative-text">الأجبان الطبيعية المعتقة (مثل الرومي والبارميزان) أو حليب جوز الهند.</div>
+        </div>
+      </div>
+      <div class="item-card">
+        <div class="item-header">
+          <span class="item-icon">🧪</span>
+          <span class="item-name">الزيوت النباتية المصنعة</span>
+        </div>
+        <div class="alternative-box">
+          <div class="alternative-title">🔄 البديل المسموح:</div>
+          <div class="alternative-text">زيت الزيتون البكر الممتاز، السمن البلدي الطبيعي، وزبدة جوز الهند.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. البقوليات -->
+  <section class="category-section">
+    <h3 class="category-title" style="border-bottom-color: #ef4444;"><span>🫘</span> البقوليات بجميع أنواعها</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div class="item-header">
+          <span class="item-icon">🫘</span>
+          <span class="item-name">الفول والعدس والحمص</span>
+        </div>
+        <div class="alternative-box">
+          <div class="alternative-title">🔄 البديل المسموح:</div>
+          <div class="alternative-text">تعتبر البقوليات مهيجة وممنوعة تماماً، البديل هو الوجبات القائمة على الأرز واللحوم أو البطاطس.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer class="site-footer"></footer>
+
+<script src="js/themes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

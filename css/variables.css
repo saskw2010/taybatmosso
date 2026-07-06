@@ -1,0 +1,292 @@
+/* ═══════════════════════════════════════════════
+   TAYEBAT CLONE - CSS VARIABLES & THEME SYSTEM
+   3 Themes × 2 Modes (Light/Dark) = 6 combinations
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Font System ── */
+  --font-primary: 'Tajawal', sans-serif;
+  --font-serif: 'Amiri', serif;
+
+  /* ── Spacing Scale ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* ── Border Radius ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* ── Shadows (Light mode defaults) ── */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  --shadow-xl: 0 12px 48px rgba(0,0,0,0.16);
+
+  /* ── Transitions ── */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* ── Z-Index Scale ── */
+  --z-dropdown: 100;
+  --z-header: 1000;
+  --z-modal: 2000;
+  --z-toast: 3000;
+  --z-fab: 900;
+
+  /* ── Layout ── */
+  --max-width: 1200px;
+  --header-height: 70px;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 1: EMERALD TEAL (Default)
+   أخضر إميرالد مائل للأزرق
+   ═══════════════════════════════════════════════ */
+[data-theme="emerald-teal"],
+:root {
+  /* ── Primary Palette ── */
+  --primary-darkest: #073b3a;
+  --primary-dark: #0d4f4f;
+  --primary: #0f766e;
+  --primary-mid: #14b8a6;
+  --primary-light: #5eead4;
+  --primary-lightest: #ccfbf1;
+
+  /* ── Accent / Gold ── */
+  --accent: #d4a843;
+  --accent-light: #f0d678;
+  --accent-dark: #a17c2f;
+  --accent-glow: rgba(212, 168, 67, 0.4);
+
+  /* ── Status Colors ── */
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --info: #06b6d4;
+
+  /* ── Surfaces (Light Mode) ── */
+  --bg-body: #f0fdfa;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f0f9f6;
+  --bg-header: linear-gradient(135deg, #073b3a 0%, #0d4f4f 50%, #0f766e 100%);
+  --bg-hero: linear-gradient(160deg, #073b3a 0%, #0d4f4f 40%, #0f766e 80%, #14b8a6 100%);
+  --bg-footer: linear-gradient(135deg, #073b3a, #0d4f4f);
+
+  /* ── Text Colors (Light Mode) ── */
+  --text-primary: #0f2f2e;
+  --text-secondary: #3d6b69;
+  --text-muted: #7a9e9c;
+  --text-on-primary: #ffffff;
+  --text-on-accent: #1a3d2b;
+  --text-heading: #073b3a;
+
+  /* ── Borders (Light Mode) ── */
+  --border-color: rgba(15, 118, 110, 0.12);
+  --border-color-strong: rgba(15, 118, 110, 0.25);
+  --border-accent: rgba(212, 168, 67, 0.3);
+
+  /* ── Card ── */
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 118, 110, 0.08);
+  --card-shadow: 0 4px 12px rgba(7, 59, 58, 0.06);
+  --card-hover-shadow: 0 12px 32px rgba(7, 59, 58, 0.15);
+
+  /* ── Interactive ── */
+  --hover-overlay: rgba(15, 118, 110, 0.05);
+  --btn-primary-bg: linear-gradient(135deg, #0f766e, #0d4f4f);
+  --btn-primary-hover: linear-gradient(135deg, #14b8a6, #0f766e);
+  --btn-accent-bg: linear-gradient(135deg, #d4a843, #f0d678);
+  --btn-accent-hover: linear-gradient(135deg, #f0d678, #d4a843);
+
+  /* ── Glass Effect ── */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: blur(8px);
+
+  /* ── Specific Section Colors ── */
+  --hero-leaf-opacity: 0.15;
+  --stats-green: #10b981;
+  --stats-red: #ef4444;
+  --stats-gold: #d4a843;
+  --freq-unlimited: #10b981;
+  --freq-daily: #22c55e;
+  --freq-weekly: #eab308;
+  --freq-sometimes: #a855f7;
+  --freq-never: #ef4444;
+
+  /* ── Quote Cards ── */
+  --quote-shock-bg: linear-gradient(135deg, #fef2f2, #fff1f2);
+  --quote-shock-border: rgba(239, 68, 68, 0.2);
+  --quote-science-bg: linear-gradient(135deg, #eff6ff, #f0f9ff);
+  --quote-science-border: rgba(59, 130, 246, 0.2);
+  --quote-default-bg: linear-gradient(135deg, #f0fdfa, #ecfdf5);
+  --quote-default-border: rgba(15, 118, 110, 0.2);
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 2: OCEAN EMERALD
+   أخضر إميرالد مائل أكثر للأزرق البحري
+   ═══════════════════════════════════════════════ */
+[data-theme="ocean-emerald"] {
+  --primary-darkest: #042f3d;
+  --primary-dark: #064e5e;
+  --primary: #0891b2;
+  --primary-mid: #22d3ee;
+  --primary-light: #67e8f9;
+  --primary-lightest: #cffafe;
+
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --accent-dark: #b45309;
+  --accent-glow: rgba(245, 158, 11, 0.4);
+
+  --bg-body: #ecfeff;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f0f9ff;
+  --bg-header: linear-gradient(135deg, #042f3d 0%, #064e5e 50%, #0891b2 100%);
+  --bg-hero: linear-gradient(160deg, #042f3d 0%, #064e5e 40%, #0891b2 80%, #22d3ee 100%);
+  --bg-footer: linear-gradient(135deg, #042f3d, #064e5e);
+
+  --text-primary: #0c2d3d;
+  --text-secondary: #2b6178;
+  --text-muted: #6b9eb5;
+  --text-heading: #042f3d;
+
+  --border-color: rgba(8, 145, 178, 0.12);
+  --border-color-strong: rgba(8, 145, 178, 0.25);
+  --border-accent: rgba(245, 158, 11, 0.3);
+
+  --card-bg: #ffffff;
+  --card-border: rgba(8, 145, 178, 0.08);
+  --card-shadow: 0 4px 12px rgba(4, 47, 61, 0.06);
+  --card-hover-shadow: 0 12px 32px rgba(4, 47, 61, 0.15);
+
+  --hover-overlay: rgba(8, 145, 178, 0.05);
+  --btn-primary-bg: linear-gradient(135deg, #0891b2, #064e5e);
+  --btn-primary-hover: linear-gradient(135deg, #22d3ee, #0891b2);
+  --btn-accent-bg: linear-gradient(135deg, #f59e0b, #fbbf24);
+  --btn-accent-hover: linear-gradient(135deg, #fbbf24, #f59e0b);
+
+  --quote-default-bg: linear-gradient(135deg, #ecfeff, #f0f9ff);
+  --quote-default-border: rgba(8, 145, 178, 0.2);
+}
+
+/* ═══════════════════════════════════════════════
+   THEME 3: ROYAL EMERALD
+   أخضر ملكي مع لمسة أزرق نيلي
+   ═══════════════════════════════════════════════ */
+[data-theme="royal-emerald"] {
+  --primary-darkest: #0f1729;
+  --primary-dark: #1e3a5f;
+  --primary: #2563eb;
+  --primary-mid: #60a5fa;
+  --primary-light: #93c5fd;
+  --primary-lightest: #dbeafe;
+
+  --accent: #eab308;
+  --accent-light: #fde047;
+  --accent-dark: #a16207;
+  --accent-glow: rgba(234, 179, 8, 0.4);
+
+  --bg-body: #eff6ff;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f0f5ff;
+  --bg-header: linear-gradient(135deg, #0f1729 0%, #1e3a5f 50%, #2563eb 100%);
+  --bg-hero: linear-gradient(160deg, #0f1729 0%, #1e3a5f 40%, #2563eb 80%, #60a5fa 100%);
+  --bg-footer: linear-gradient(135deg, #0f1729, #1e3a5f);
+
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-heading: #0f1729;
+
+  --border-color: rgba(37, 99, 235, 0.12);
+  --border-color-strong: rgba(37, 99, 235, 0.25);
+  --border-accent: rgba(234, 179, 8, 0.3);
+
+  --card-bg: #ffffff;
+  --card-border: rgba(37, 99, 235, 0.08);
+  --card-shadow: 0 4px 12px rgba(15, 23, 41, 0.06);
+  --card-hover-shadow: 0 12px 32px rgba(15, 23, 41, 0.15);
+
+  --hover-overlay: rgba(37, 99, 235, 0.05);
+  --btn-primary-bg: linear-gradient(135deg, #2563eb, #1e3a5f);
+  --btn-primary-hover: linear-gradient(135deg, #60a5fa, #2563eb);
+  --btn-accent-bg: linear-gradient(135deg, #eab308, #fde047);
+  --btn-accent-hover: linear-gradient(135deg, #fde047, #eab308);
+
+  --quote-default-bg: linear-gradient(135deg, #eff6ff, #f0f5ff);
+  --quote-default-border: rgba(37, 99, 235, 0.2);
+}
+
+/* ═══════════════════════════════════════════════
+   DARK MODE - Applied on top of any theme
+   ═══════════════════════════════════════════════ */
+[data-mode="dark"] {
+  --bg-body: #0a1a1a;
+  --bg-surface: #112222;
+  --bg-surface-alt: #152e2e;
+  --card-bg: #152e2e;
+
+  --text-primary: #e2eded;
+  --text-secondary: #a3c4c2;
+  --text-muted: #6b9e9c;
+  --text-heading: #f0fdfa;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-strong: rgba(255, 255, 255, 0.15);
+
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.4);
+
+  --hover-overlay: rgba(255, 255, 255, 0.05);
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --quote-shock-bg: linear-gradient(135deg, #1f1215, #1f1518);
+  --quote-shock-border: rgba(239, 68, 68, 0.3);
+  --quote-science-bg: linear-gradient(135deg, #0f1729, #101b2e);
+  --quote-science-border: rgba(59, 130, 246, 0.3);
+  --quote-default-bg: linear-gradient(135deg, #0d1f1f, #0f2626);
+  --quote-default-border: rgba(20, 184, 166, 0.3);
+}
+
+/* ── Dark mode with Ocean theme ── */
+[data-theme="ocean-emerald"][data-mode="dark"] {
+  --bg-body: #081a22;
+  --bg-surface: #0c2530;
+  --bg-surface-alt: #103040;
+  --card-bg: #0c2530;
+  --text-heading: #ecfeff;
+
+  --quote-default-bg: linear-gradient(135deg, #0c1f2a, #0e2435);
+  --quote-default-border: rgba(34, 211, 238, 0.3);
+}
+
+/* ── Dark mode with Royal theme ── */
+[data-theme="royal-emerald"][data-mode="dark"] {
+  --bg-body: #0a0f1e;
+  --bg-surface: #111827;
+  --bg-surface-alt: #1a2340;
+  --card-bg: #111827;
+  --text-heading: #dbeafe;
+
+  --quote-default-bg: linear-gradient(135deg, #0f1629, #141d3a);
+  --quote-default-border: rgba(96, 165, 250, 0.3);
+}

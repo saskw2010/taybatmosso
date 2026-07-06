@@ -1,0 +1,683 @@
+/* ═══════════════════════════════════════════════
+   TAYEBAT CLONE — RESPONSIVE BREAKPOINTS
+   1024px · 768px · 480px
+   ═══════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════
+   BREAKPOINT: 1024px (Tablet landscape)
+   ═══════════════════════════════════ */
+@media (max-width: 1024px) {
+  /* Nav */
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .header-main {
+    padding: 0 20px;
+  }
+
+  /* Grids reduce columns */
+  .ai-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .home-quotes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .freq-mini-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ai-examples-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer-links {
+    gap: 20px;
+  }
+}
+
+/* ═══════════════════════════════════
+   BREAKPOINT: 768px (Tablet portrait)
+   ═══════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Body padding for bottom nav ── */
+  body {
+    padding-bottom: 70px;
+  }
+
+  /* ── Mobile Menu Button ── */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav-close {
+    display: flex;
+  }
+
+  /* ── Mobile Navigation ── */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--primary-darkest);
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    overflow-y: auto;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .main-nav.open {
+    right: 0;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-link.active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ── Dropdown in mobile ── */
+  .nav-dropdown {
+    display: block;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.04);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 4px 0;
+    margin-top: 4px;
+    display: none;
+  }
+
+  .nav-dropdown-menu::before {
+    display: none;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown-item {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+
+  .nav-dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+  }
+
+  /* ── Theme controls in mobile menu ── */
+  .theme-controls {
+    margin: 16px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: center;
+  }
+
+  /* ── Header top bar ── */
+  .header-top {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+
+  .header-main {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .logo-title {
+    font-size: 18px;
+  }
+
+  .logo-emblem {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* ── Hero ── */
+  .hero-home {
+    min-height: 70vh;
+    padding: 40px 16px 40px;
+  }
+
+  .hero-home h1 {
+    font-size: 42px;
+  }
+
+  .hero-tagline {
+    font-size: 17px;
+  }
+
+  .hero-quote {
+    font-size: 14px;
+  }
+
+  .hero-emblem {
+    width: 150px;
+  }
+
+  .hero-ai-cta {
+    max-width: 100%;
+    flex-direction: row;
+  }
+
+  /* ── Stats Bar ── */
+  .stats-bar {
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .stat-card {
+    padding: 8px 12px;
+  }
+
+  .stat-num {
+    font-size: 26px;
+  }
+
+  .stat-card:not(:last-child)::after {
+    display: none;
+  }
+
+  /* ── AI Features ── */
+  .ai-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .ai-feature-card {
+    padding: 20px 14px;
+  }
+
+  .ai-features-title {
+    font-size: 22px;
+  }
+
+  /* ── Quotes ── */
+  .home-quotes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Rules ── */
+  .rules-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .rule-card {
+    padding: 18px;
+  }
+
+  /* ── Frequency Mini ── */
+  .freq-mini-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .freq-mini-count {
+    font-size: 22px;
+  }
+
+  .freq-mini-item {
+    padding: 14px 8px;
+  }
+
+  /* ── Quick Access ── */
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── AI Showcase ── */
+  .ai-examples-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-showcase-card {
+    padding: 28px 20px;
+  }
+
+  /* ── Tribute ── */
+  .tribute-card {
+    padding: 28px 20px;
+  }
+
+  .tribute-name {
+    font-size: 22px;
+  }
+
+  .tribute-portrait-wrap {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* ── Community Banner ── */
+  .community-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .community-banner-cta {
+    margin-top: 8px;
+  }
+
+  /* ── Fasting ── */
+  .fasting-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  /* ── Footer ── */
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    gap: 24px;
+  }
+
+  .footer-col-title::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .site-footer {
+    padding: 40px 16px 90px;
+  }
+
+  /* ── Testimonials ── */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Bottom Nav visible ── */
+  .bottom-nav {
+    display: block;
+  }
+
+  /* ── Chat FAB adjusts ── */
+  .chat-fab {
+    bottom: 80px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .chat-fab::after {
+    display: none;
+  }
+
+  /* ── Modal ── */
+  .modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  /* ── Toast ── */
+  .toast-container {
+    bottom: 90px;
+    right: 16px;
+    left: 16px;
+    transform: none;
+  }
+
+  .toast {
+    min-width: auto;
+    max-width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════
+   BREAKPOINT: 480px (Mobile portrait)
+   ═══════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* ── Hero ── */
+  .hero-home h1 {
+    font-size: 34px;
+  }
+
+  .hero-tagline {
+    font-size: 15px;
+  }
+
+  .hero-emblem {
+    width: 120px;
+  }
+
+  .hero-label {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .hero-ai-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-ai-cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .hero-ai-cta-text {
+    text-align: center;
+  }
+
+  .hero-ai-cta-arrow {
+    display: none;
+  }
+
+  .hero-pdf-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── Stats Bar ── */
+  .stats-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .stat-card {
+    justify-content: center;
+  }
+
+  /* ── AI Features ── */
+  .ai-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .ai-feature-card {
+    padding: 16px 10px;
+  }
+
+  .ai-feature-icon {
+    font-size: 32px;
+  }
+
+  .ai-feature-title {
+    font-size: 14px;
+  }
+
+  .ai-features-title {
+    font-size: 20px;
+  }
+
+  /* ── Rules ── */
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Frequency Mini ── */
+  .freq-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Center last odd item */
+  .freq-mini-grid .freq-mini-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .freq-mini-count {
+    font-size: 20px;
+  }
+
+  .freq-mini-label {
+    font-size: 12px;
+  }
+
+  /* ── Health Conditions ── */
+  .health-conditions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Quick Access ── */
+  .quick-card {
+    padding: 16px 18px;
+  }
+
+  .quick-icon {
+    font-size: 26px;
+  }
+
+  .quick-text h3 {
+    font-size: 14px;
+  }
+
+  /* ── AI Showcase ── */
+  .ai-showcase-card {
+    padding: 24px 16px;
+  }
+
+  .ai-showcase-title {
+    font-size: 20px;
+  }
+
+  .ai-example-card {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  /* ── Tribute ── */
+  .tribute-card {
+    padding: 24px 16px;
+  }
+
+  .tribute-name {
+    font-size: 20px;
+  }
+
+  .tribute-text {
+    font-size: 14px;
+  }
+
+  .tribute-portrait-wrap {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* ── Community Banner ── */
+  .community-banner {
+    padding: 16px;
+  }
+
+  .community-banner-title {
+    font-size: 14px;
+  }
+
+  /* ── Fasting ── */
+  .fasting-card {
+    padding: 18px 16px;
+  }
+
+  .fasting-icon {
+    font-size: 32px;
+  }
+
+  .fasting-text h3 {
+    font-size: 16px;
+  }
+
+  /* ── Footer ── */
+  .footer-links {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* ── Section Headers ── */
+  .section-title,
+  .rules-title,
+  .home-quotes-title,
+  .health-conditions-title,
+  .testimonials-title {
+    font-size: 22px;
+  }
+
+  /* ── Header ── */
+  .logo-title {
+    font-size: 16px;
+  }
+
+  .logo-subtitle {
+    display: none;
+  }
+
+  .header-main {
+    height: 56px;
+    padding: 0 12px;
+  }
+
+  .logo-emblem {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* ── Modal ── */
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .modal-footer {
+    padding: 12px 16px;
+    flex-direction: column;
+  }
+}
+
+/* ═══════════════════════════════════
+   BREAKPOINT: 360px (Small mobile)
+   ═══════════════════════════════════ */
+@media (max-width: 360px) {
+  .hero-home h1 {
+    font-size: 28px;
+  }
+
+  .hero-tagline {
+    font-size: 14px;
+  }
+
+  .ai-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .freq-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-bar {
+    padding: 12px;
+  }
+}
+
+/* ═══════════════════════════════════
+   LANDSCAPE PHONE FIX
+   ═══════════════════════════════════ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-home {
+    min-height: auto;
+    padding: 30px 20px;
+  }
+
+  .hero-emblem {
+    width: 80px;
+  }
+
+  .hero-home h1 {
+    font-size: 28px;
+  }
+}
+
+/* ═══════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════ */
+@media print {
+  .site-header,
+  .header-top,
+  .bottom-nav,
+  .chat-fab,
+  .theme-controls,
+  .theme-panel,
+  .theme-panel-overlay,
+  .mobile-menu-btn,
+  .nav-overlay,
+  .hero-ai-badge,
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 0;
+    background: white;
+    color: black;
+  }
+
+  .hero-home {
+    min-height: auto;
+    background: none;
+    color: black;
+    padding: 20px;
+  }
+
+  .hero-home h1 {
+    color: black;
+    font-size: 28px;
+  }
+}

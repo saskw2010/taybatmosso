@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المسموحات الرسمية - كتاب نظام الطيبات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .subpage-container { max-width: var(--max-width); margin: 40px auto; padding: 0 20px; }
+    .category-section { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-xl); padding: 30px; margin-bottom: 30px; box-shadow: var(--shadow-md); }
+    .category-title { font-family: var(--font-serif); font-size: 26px; color: var(--text-heading); margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; }
+    .item-card { background: var(--bg-body); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; transition: var(--transition-normal); display: flex; flex-direction: column; justify-content: space-between; }
+    .item-card:hover { transform: translateY(-2px); border-color: var(--primary); box-shadow: var(--shadow-sm); }
+    .item-icon { font-size: 32px; margin-bottom: 8px; }
+    .item-name { font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .item-desc { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.4; }
+    .item-freq { font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full); display: inline-block; font-weight: 600; width: fit-content; }
+    .freq-unlimited { background: rgba(16, 185, 129, 0.15); color: #059669; }
+    .freq-daily { background: rgba(34, 197, 94, 0.15); color: #16a34a; }
+    .freq-weekly { background: rgba(234, 179, 8, 0.15); color: #ca8a04; }
+    .freq-sometimes { background: rgba(168, 85, 247, 0.15); color: #9333ea; }
+  </style>
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <div class="header-top">🌿 غذاؤك دواؤك ... ودواؤك في غذائك — التوازن سر الصحة والاعتدال سر الحياة 🌿</div>
+  <div class="header-main">
+    <a href="index.html" class="logo-area">
+      <div class="logo-emblem"><div class="logo-emblem-inner">🌿</div></div>
+      <div class="logo-text-area">
+        <div class="logo-title">نظام الطيبات</div>
+        <div class="logo-subtitle">الدكتور ضياء العوضي</div>
+      </div>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">🏠 الرئيسية</a>
+      <a href="allowed.html" class="nav-link active">✅ المسموحات</a>
+      <a href="forbidden.html" class="nav-link">❌ الممنوعات</a>
+      <a href="chat.html" class="nav-link">🤖 المساعد الذكي</a>
+    </nav>
+    <div class="theme-controls" id="themeControls">
+      <div class="theme-color-btns">
+        <button class="theme-color-btn active" data-theme-btn="emerald-teal"><span class="theme-color-dot" style="background: #0f766e;"></span></button>
+        <button class="theme-color-btn" data-theme-btn="ocean-emerald"><span class="theme-color-dot" style="background: #0891b2;"></span></button>
+        <button class="theme-color-btn" data-theme-btn="royal-emerald"><span class="theme-color-dot" style="background: #2563eb;"></span></button>
+      </div>
+      <button class="mode-toggle-btn" id="modeToggleDesktop">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main class="subpage-container">
+  <div class="section-header-center">
+    <p class="section-label">✦ الدليل المعتمد من الكتاب ✦</p>
+    <h2>قائمة الأطعمة المسموحة كاملة</h2>
+    <p class="section-desc">كافة الأصناف المسموحة والمبوبة حسب كتاب الدكتور ضياء العوضي رحمه الله الطبعة الإلكترونية الأولى.</p>
+  </div>
+
+  <!-- النشويات والبهارات -->
+  <section class="category-section">
+    <h3 class="category-title">🍚 النشويات والبهارات والأساسيات</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🍚</div>
+          <div class="item-name">الأرز الأبيض (جميع أنواعه)</div>
+          <p class="item-desc">باهي، بسمتي، تايلاندي... يطهى جيداً بالسمن أو الزبدة والملح والخل.</p>
+        </div>
+        <span class="item-freq freq-unlimited">بلا قيود (أساسي)</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🥔</div>
+          <div class="item-name">البطاطس والبطاطا</div>
+          <p class="item-desc">مسلوقة، مقلية بالدهون المسموحة، مشوية، أو شيبسي منزلي.</p>
+        </div>
+        <span class="item-freq freq-unlimited">بلا قيود (أساسي)</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🍞</div>
+          <div class="item-name">توست القمح الكامل</div>
+          <p class="item-desc">مسموح بكميات معقولة، محمص جيداً بالزبدة.</p>
+        </div>
+        <span class="item-freq freq-unlimited">بلا قيود (أساسي)</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🌽</div>
+          <div class="item-name">الفشار والذرة المشوية</div>
+          <p class="item-desc">وجبة خفيفة آمنة بديلة للمخبوزات على فترات متباعدة.</p>
+        </div>
+        <span class="item-freq freq-weekly">أسبوعياً</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- اللحوم والبروتينات -->
+  <section class="category-section">
+    <h3 class="category-title">🥩 اللحوم والبروتينات والطيور</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🍖</div>
+          <div class="item-name">لحم البتلو والندوز وجملي</div>
+          <p class="item-desc">مسلوقة ومطهية جيداً، سهلة الهضم والامتصاص.</p>
+        </div>
+        <span class="item-freq freq-weekly">أسبوعياً (بالتناوب)</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🐏</div>
+          <div class="item-name">لحم الضأن والماعز</div>
+          <p class="item-desc">لحوم حيوانات تأكل العشب الحُر، غنية بالكارنيتين والدهون النظيفة.</p>
+        </div>
+        <span class="item-freq freq-weekly">أسبوعياً (بالتناوب)</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🥣</div>
+          <div class="item-name">الكوارع والممبار وشوربة العظام</div>
+          <p class="item-desc">غنية جداً بالكولاجين المفيد للجدار المعوي والمفاصل.</p>
+        </div>
+        <span class="item-freq freq-weekly">أسبوعياً</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🐟</div>
+          <div class="item-name">الأسماك البحرية الطازجة</div>
+          <p class="item-desc">السردين الطازج، الماكريل، التونة الطبيعية. (أسماك المزارع ممنوعة).</p>
+        </div>
+        <span class="item-freq freq-weekly">أسبوعياً</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🕊️</div>
+          <div class="item-name">الحمام والسمان والبرّي</div>
+          <p class="item-desc">الطيور التي تطير في السماء وتأكل حبوباً نظيفة فقط.</p>
+        </div>
+        <span class="item-freq freq-weekly">أسبوعياً</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- الدهون والزيوت والخل -->
+  <section class="category-section">
+    <h3 class="category-title">🧈 الدهون والزيوت والخل المسموح</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🧈</div>
+          <div class="item-name">السمن البلدي والزبدة الطبيعية</div>
+          <p class="item-desc">دهون حيوانية نقية، مصدر للطاقة النظيفة وتنشيط الميتوكوندريا.</p>
+        </div>
+        <span class="item-freq freq-unlimited">بلا قيود</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🫒</div>
+          <div class="item-name">زيت الزيتون وزيت جوز الهند</div>
+          <p class="item-desc">معصور على البارد، يستخدم على وجبة الأرز أو مع السلطات المطبوخة.</p>
+        </div>
+        <span class="item-freq freq-unlimited">بلا قيود / يومياً</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🍶</div>
+          <div class="item-name">خل قصب السكر وخل التفاح</div>
+          <p class="item-desc">رئيسي ومهم جداً بعد الأكل مع كوب ماء لضبط حموضة المعدة وسكر الدم.</p>
+        </div>
+        <span class="item-freq freq-unlimited">بلا قيود / يومياً</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🥣</div>
+          <div class="item-name">القشطة البلدي الطبيعية</div>
+          <p class="item-desc">دهن لبني طبيعي نظيف مليء بالفيتامينات الذائبة في الدهون.</p>
+        </div>
+        <span class="item-freq freq-unlimited">بلا قيود</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفواكه والأجبان -->
+  <section class="category-section">
+    <h3 class="category-title">🍇 الفواكه والأجبان المسموحة</h3>
+    <div class="item-grid">
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🍇</div>
+          <div class="item-name">العنب والتفاح (مقشر)</div>
+          <p class="item-desc">من أفضل الفواكه سهلة الهضم والامتصاص ومضادات الأكسدة.</p>
+        </div>
+        <span class="item-freq freq-weekly">أسبوعياً / يومياً</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🍌</div>
+          <div class="item-name">الموز والتمر والرمان</div>
+          <p class="item-desc">التمر 7 حبات على الريق سنة نبوية. الرمان بدون بذر.</p>
+        </div>
+        <span class="item-freq freq-daily">يوميًا / أسبوعياً</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🧀</div>
+          <div class="item-name">الأجبان المطبوخة المعتقة</div>
+          <p class="item-desc">جبنة جودة، فلمنك، شيدر، موتزاريلا، ريكفورد كشكفال. (الألبان السائلة ممنوعة).</p>
+        </div>
+        <span class="item-freq freq-weekly">أسبوعياً</span>
+      </div>
+      <div class="item-card">
+        <div>
+          <div class="item-icon">🍯</div>
+          <div class="item-name">العسل الطبيعي وحلاوة طحينية</div>
+          <p class="item-desc">عسل نحل، عسل أسود (دبس). الحلاوة الطحينية ممتازة للكالسيوم.</p>
+        </div>
+        <span class="item-freq freq-daily">يومياً / أسبوعياً</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"></footer>
+<script src="js/themes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

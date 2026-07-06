@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مؤشر التكرار - نظام الطيبات للدكتور ضياء العوضي</title>
+  
+  <!-- ===== Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .subpage-container {
+      max-width: var(--max-width);
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .freq-guide-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .freq-level-box {
+      margin-top: 30px;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border-right: 6px solid var(--primary);
+      background: var(--bg-surface-alt);
+    }
+
+    .freq-level-unlimited { border-right-color: #10b981; }
+    .freq-level-daily { border-right-color: #22c55e; }
+    .freq-level-weekly { border-right-color: #eab308; }
+    .freq-level-sometimes { border-right-color: #a855f7; }
+    .freq-level-never { border-right-color: #ef4444; }
+
+    .freq-level-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .freq-level-desc {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ♿ Skip Link -->
+<a href="#freqGuideContent" class="skip-link">تخطّي للمحتوى الرئيسي</a>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-top">
+    🌿 غذاؤك دواؤك ... ودواؤك في غذائك — التوازن سر الصحة والاعتدال سر الحياة 🌿
+  </div>
+  <div class="header-main">
+    <a href="/" class="logo-area">
+      <div class="logo-emblem">
+        <div class="logo-emblem-inner">🌿</div>
+      </div>
+      <div class="logo-text-area">
+        <div class="logo-title">نظام الطيبات</div>
+        <div class="logo-subtitle">الدكتور ضياء العوضي</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">🏠 الرئيسية</a>
+      <a href="allowed.html" class="nav-link">✅ المسموحات</a>
+      <a href="forbidden.html" class="nav-link">❌ الممنوعات</a>
+      <a href="chat.html" class="nav-link">🤖 المساعد الذكي</a>
+    </nav>
+
+    <!-- Desktop Theme Controls -->
+    <div class="theme-controls" id="themeControls">
+      <div class="theme-color-btns">
+        <button class="theme-color-btn active" data-theme-btn="emerald-teal" title="إميرالد تيل" aria-label="ثيم إميرالد تيل">
+          <span class="theme-color-dot" style="background: #0f766e;"></span>
+        </button>
+        <button class="theme-color-btn" data-theme-btn="ocean-emerald" title="أوشن إميرالد" aria-label="ثيم أوشن إميرالد">
+          <span class="theme-color-dot" style="background: #0891b2;"></span>
+        </button>
+        <button class="theme-color-btn" data-theme-btn="royal-emerald" title="رويال إميرالد" aria-label="ثيم رويال إميرالد">
+          <span class="theme-color-dot" style="background: #2563eb;"></span>
+        </button>
+      </div>
+      <button class="mode-toggle-btn" id="modeToggleDesktop" title="تبديل الوضع" aria-label="تبديل وضع الإضاءة">
+        🌙
+      </button>
+    </div>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">☰</button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     FREQUENCY GUIDE CONTENT
+     ═══════════════════════════════════════════ -->
+<main class="subpage-container" id="freqGuideContent">
+  <div class="section-header-center">
+    <p class="section-label">✦ مؤشر التكرار والأصناف ✦</p>
+    <h2>دليلك لتكرار الأطعمة</h2>
+    <p class="section-desc">أحد أركان نظام الطيبات الأساسية للدكتور ضياء العوضي رحمه الله هو عدم تكرار بعض الأطعمة يومياً لتجنب إرهاق الجهاز الهضمي والخلوي.</p>
+  </div>
+
+  <div class="freq-guide-card">
+    <h3 style="font-family: var(--font-serif); font-size: 24px; color: var(--text-heading); margin-bottom: 16px;">مستويات مؤشر التكرار الخمسة:</h3>
+    
+    <div class="freq-level-box freq-level-unlimited">
+      <div class="freq-level-title">🟢🟢 الأساسيات (بلا قيود)</div>
+      <div class="freq-level-desc">هي الأطعمة التي تشكل قاعدة هرم التغذية ويمكن تناولها في كل وجبة بدون قلق، مثل الأرز الأبيض والخل الطبيعي وشوربة العظام والدهون الطبيعية الحيوانية.</div>
+    </div>
+
+    <div class="freq-level-box freq-level-daily">
+      <div class="freq-level-title">🟢 يومياً (مرة باليوم)</div>
+      <div class="freq-level-desc">أطعمة مسموحة ومفيدة جداً ولكن يفضّل الاكتفاء بتناولها مرة واحدة فقط في اليوم، مثل التمر والبطاطس المقشرة والموز والعنب.</div>
+    </div>
+
+    <div class="freq-level-box freq-level-weekly">
+      <div class="freq-level-title">🟡 أسبوعياً (مرة أو مرتين بالأسبوع)</div>
+      <div class="freq-level-desc">أطعمة غنية بالبروتين أو النشويات المعقدة يفضّل الفصل بين مرات تناولها بمدة لا تقل عن 3 إلى 4 أيام، مثل الأسماك البحرية الطازجة والدواجن والشوفان المصفى جيداً.</div>
+    </div>
+
+    <div class="freq-level-box freq-level-sometimes">
+      <div class="freq-level-title">🟣 أحياناً (مرة أو مرتين بالشهر)</div>
+      <div class="freq-level-desc">أطعمة إضافية للتحلية أو التغيير ليست أساسية للصحة ولكن تناولها على فترات متباعدة لا يضر، مثل الحلويات المصنوعة منزلياً بمكونات مسموحة.</div>
+    </div>
+
+    <div class="freq-level-box freq-level-never">
+      <div class="freq-level-title">🔴 ممنوع مطلقاً</div>
+      <div class="freq-level-desc">الأطعمة والمصنعات والزيوت المهدرجة والجلوتين والحليب البقري السائل التي تهيج الجهاز الهضمي وتسبب الالتهابات الخلوية ويمنع تناولها نهائياً.</div>
+    </div>
+  </div>
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer class="site-footer"></footer>
+
+<script src="js/themes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
