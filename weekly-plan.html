@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الخطة الأسبوعية وجدول الوجبات | نظام الطيبات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .subpage-container { max-width: var(--max-width); margin: 40px auto; padding: 0 20px; }
+    .day-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-xl); padding: 25px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+    .day-title { font-size: 20px; font-weight: 800; color: var(--text-heading); border-bottom: 1.5px solid var(--accent); padding-bottom: 6px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; }
+    .day-theme { font-size: 12px; font-weight: 600; color: var(--primary); background: var(--bg-surface-alt); padding: 4px 10px; border-radius: var(--radius-sm); }
+    .meals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .meal-box { background: var(--bg-body); padding: 14px; border-radius: var(--radius-md); border: 1.5px solid var(--border-color); }
+    .meal-label { font-size: 13px; font-weight: 800; color: var(--accent-dark); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .meal-content { font-size: 13px; color: var(--text-primary); line-height: 1.5; }
+    @media (max-width: 768px) {
+      .meals-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <div class="header-top">🌿 غذاؤك دواؤك ... ودواؤك في غذائك — التوازن سر الصحة والاعتدال سر الحياة 🌿</div>
+  <div class="header-main">
+    <a href="index.html" class="logo-area">
+      <div class="logo-emblem"><div class="logo-emblem-inner">🌿</div></div>
+      <div class="logo-text-area">
+        <div class="logo-title">نظام الطيبات</div>
+        <div class="logo-subtitle">الدكتور ضياء العوضي</div>
+      </div>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">🏠 الرئيسية</a>
+      <a href="allowed.html" class="nav-link">✅ المسموحات</a>
+      <a href="forbidden.html" class="nav-link">❌ الممنوعات</a>
+      <a href="chat.html" class="nav-link">🤖 المساعد الذكي</a>
+    </nav>
+    <div class="theme-controls" id="themeControls">
+      <div class="theme-color-btns">
+        <button class="theme-color-btn active" data-theme-btn="emerald-teal"><span class="theme-color-dot" style="background: #0f766e;"></span></button>
+        <button class="theme-color-btn" data-theme-btn="ocean-emerald"><span class="theme-color-dot" style="background: #0891b2;"></span></button>
+        <button class="theme-color-btn" data-theme-btn="royal-emerald"><span class="theme-color-dot" style="background: #2563eb;"></span></button>
+      </div>
+      <button class="mode-toggle-btn" id="modeToggleDesktop">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main class="subpage-container">
+  <div class="section-header-center">
+    <p class="section-label">✦ الدليل الأسبوعي لتطبيق الطيبات ✦</p>
+    <h2>جدول وجبات أسبوعي مقترح</h2>
+    <p class="section-desc">نموذج تطبيقي لسبعة أيام كاملة مأخوذ من الفصل الختامي للكتاب، لتسهيل تنويع الوجبات مع الالتزام بالصيام.</p>
+  </div>
+
+  <!-- السبت -->
+  <div class="day-card">
+    <div class="day-title">
+      <span>📅 السبت</span>
+      <span class="day-theme">يوم بداية متوازن — كل المجموعات الأساسية</span>
+    </div>
+    <div class="meals-grid">
+      <div class="meal-box">
+        <div class="meal-label">🌅 الفطور</div>
+        <div class="meal-content">توست قمح كامل + زبدة بلدي + عسل + قهوة تركية.</div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-label">☀️ الغداء</div>
+        <div class="meal-content">أرز أبيض + لحم بتلو مسلوق + بطاطس مهروسة بالزبدة.</div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-label">🌙 العشاء</div>
+        <div class="meal-content">بطاطا حلوة مشوية + قشطة + تمر.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- الأحد -->
+  <div class="day-card">
+    <div class="day-title">
+      <span>📅 الأحد</span>
+      <span class="day-theme">يوم السمك — الأوميجا ٣ الأسبوعية</span>
+    </div>
+    <div class="meals-grid">
+      <div class="meal-box">
+        <div class="meal-label">🌅 الفطور</div>
+        <div class="meal-content">تمر + قهوة + عسل أسود.</div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-label">☀️ الغداء</div>
+        <div class="meal-content">أرز بسمتي + سمك سردين مشوي + ليمون قليل (من البحر فقط).</div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-label">🌙 العشاء</div>
+        <div class="meal-content">موز + مكسرات (لوز/كاجو) + شاي أخضر.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- الاثنين -->
+  <div class="day-card">
+    <div class="day-title">
+      <span>📅 الاثنين</span>
+      <span class="day-theme">يوم صيام — يجدد الميتوكوندريا</span>
+    </div>
+    <div class="meals-grid">
+      <div class="meal-box">
+        <div class="meal-label">🌅 الفطور</div>
+        <div class="meal-content" style="color: var(--primary-mid); font-weight: bold;">صيام (سُنّة)</div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-label">☀️ الغداء (الإفطار)</div>
+        <div class="meal-content">تمر + ماء دافئ، ثم: أرز + خضار محشي (كوسة/باذنجان مطبوخ بالأرز).</div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-label">🌙 العشاء</div>
+        <div class="meal-content">حلاوة طحينية + قهوة تركية.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"></footer>
+<script src="js/themes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
